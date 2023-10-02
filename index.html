@@ -13,17 +13,12 @@ Creator is Keith Paterson
   <style>
 
     body {text-align: center;
-    margin-bottom: auto;
-    }
-    div{
-      max-width: 800px;
-      margin: auto;
-      position: center;
+      margin-bottom: auto;
     }
 
 
-    #firstPerson {position: center; float: left; width: 35%; background-color: #c4820b; color: #1e55c9;}
-    #secondPerson {position: center; float: right; width: 35%; background-color: #c4820b; color: #1e55c9;}
+    #firstPerson { float: left; width: 50%; background-color: #c4820b; color: #1e55c9;}
+    #secondPerson { float: right; width: 50%; background-color: #c4820b; color: #1e55c9;}
 
 
     input {width: 120px;}
@@ -32,7 +27,7 @@ Creator is Keith Paterson
 
 </head>
 <body>
-<img src = "Banner.png" width = "1400" height="400">
+<img src = "Banner.png" width = "1400" height="500">
 
 
 <div id ="firstPerson" width = "200">
@@ -163,48 +158,48 @@ Creator is Keith Paterson
   }
 
 
-    const dbref = ref(db);
+  const dbref = ref(db);
 
-    get (child(dbref, "OIoXByEinqYrT9IJSorrlFLkev13/"))
-            .then((snapshot)=>{
-              if(snapshot.exists()){
-                dataName.innerHTML = "name: " + snapshot.val().name;
-                birthday.innerHTML = "birthday: " + snapshot.val().birthday;
-                animal.innerHTML = "Favorite Animal: " + snapshot.val().animal;
-                food.innerHTML = "Favorite Food: " + snapshot.val().food;
+  get (child(dbref, "OIoXByEinqYrT9IJSorrlFLkev13/"))
+          .then((snapshot)=>{
+            if(snapshot.exists()){
+              dataName.innerHTML = "name: " + snapshot.val().name;
+              birthday.innerHTML = "birthday: " + snapshot.val().birthday;
+              animal.innerHTML = "Favorite Animal: " + snapshot.val().animal;
+              food.innerHTML = "Favorite Food: " + snapshot.val().food;
 
-                image.src = snapshot.val().image;
+              image.src = snapshot.val().image;
 
-              } else {
-                alert("No data found");
-              }
-            })
-            .catch((error)=>{
-              alert(error)
-            })
-
-
+            } else {
+              alert("No data found");
+            }
+          })
+          .catch((error)=>{
+            alert(error)
+          })
 
 
 
-    get (child(dbref, "gY3Vbkh8yfVnAEa4mf7vuVgxxb83/"))
-            .then((snapshot)=>{
-              if(snapshot.exists()){
-                dataName2.innerHTML = "name: " + snapshot.val().name;
 
-                birthday2.innerHTML = "birthday: " + snapshot.val().birthday;
-                animal2.innerHTML = "Favorite Animal: " + snapshot.val().animal;
-                food2.innerHTML = "Favorite Food: " + snapshot.val().food;
 
-                image2.src = snapshot.val().image;
+  get (child(dbref, "gY3Vbkh8yfVnAEa4mf7vuVgxxb83/"))
+          .then((snapshot)=>{
+            if(snapshot.exists()){
+              dataName2.innerHTML = "name: " + snapshot.val().name;
 
-              } else {
-                alert("No data found");
-              }
-            })
-            .catch((error)=>{
-              alert(error)
-            })
+              birthday2.innerHTML = "birthday: " + snapshot.val().birthday;
+              animal2.innerHTML = "Favorite Animal: " + snapshot.val().animal;
+              food2.innerHTML = "Favorite Food: " + snapshot.val().food;
+
+              image2.src = snapshot.val().image;
+
+            } else {
+              alert("No data found");
+            }
+          })
+          .catch((error)=>{
+            alert(error)
+          })
 
 
 
